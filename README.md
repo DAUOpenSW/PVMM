@@ -1,5 +1,4 @@
 # PVMM
-# Curse-detection-v2
 댓글의 욕설을 감지하는 두 번째 인공지능 프로젝트입니다.
 
 욕설 감지 v1 프로젝트는 [여기](https://github.com/2runo/Curse-detection)에서 확인할 수 있습니다.
