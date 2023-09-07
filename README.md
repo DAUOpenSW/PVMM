@@ -13,6 +13,7 @@ Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕
 
 모델 구조는 아래와 같습니다 ([Netron](https://github.com/lutzroeder/netron)으로 시각화)
 
+![1](/src/iPhone 11 Pro Max - 2 (2).png)
 
 더 자세한 내용은 [코드](https://github.com/2runo/Curse-detection-v2/blob/master/src/models.py)를 참고해 주세요.
 
