@@ -1,9 +1,38 @@
 # PVMM
-댓글의 욕설을 감지하는 두 번째 인공지능 프로젝트입니다.
+<img src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/90764095-50a0-4fb3-8f88-27627974c5f6"/>
 
-욕설 감지 v1 프로젝트는 [여기](https://github.com/2runo/Curse-detection)에서 확인할 수 있습니다.
+<br><br>
 
-이 레포지토리에는 데이터 전처리, 학습 그리고 예측 코드까지 모두 포함되어 있습니다.
+## ✔목차
+* [프로젝트 정보](#프로젝트-정보)
+* [프로젝트 소개](#프로젝트-소개)
+* [팀원 소개](#팀원-소개)
+* [시작 가이드](#시작-가이드)
+* [기술 스택](#기술-스택)
+* [Ref](#ref)
+* [Kind_Words_Cloud Ref](#kind_words_cloud-ref)
+
+<br><br>
+
+## 🔎프로젝트 정보
+> 동아대학교 컴퓨터공학과 학생 팀  
+> 개발 기간: 2023.07.14 ~
+
+<br><br>
+
+## 🖐프로젝트 소개
+> 본 프로젝트는 2023 공개SW 개발자 대회 출품작으로, 머신러닝을 이용한 실시간 음성 한국어 욕설 필터링 시스템을 API 서비스로 제공하는 프로젝트입니다.
+
+<br><br>
+
+## 🙋‍♀️팀원 소개
+|<img width="300" src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/1f6c5417-5801-4748-866d-d260fcd5c36b"/>|<img width="300" src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/21996af7-da7f-4559-bca5-6486a4eb5f4f"/>|<img width="300" src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/001b876f-cbe4-4ed3-8fa5-9009ab4b2bb7"/>|<img width="300" src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/38fc7d5d-df49-47a3-b302-ea6993a839dd"/>|<img width="300" src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/725920a7-f2d2-4b60-a9ae-c6ff4cd12440"/>|
+|:---:|:---:|:---:|:---:|:---:|
+|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|
+| [김현우](https://github.com/HIT18216) | [김혜영](https://github.com/hyeyeoung) | [박성민](https://github.com/ParkSeungMin1) | [서지헌](https://github.com/MyCoooi) | [이영우](https://github.com/Dandyoung) |
+|역할|PM|역할|역할|역할|
+
+<br><br>
 
 # 모델
 Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕설 마스킹 기능을 구현했습니다.
@@ -90,7 +119,12 @@ print(curse.masking('옷 다릴 때 니 뇌도 같이 다렸니?'))  # '* * 때 
 
 2. train.py : 모델을 학습합니다. (학습된 모델은 `models` 폴더에 저장됩니다)
 
-# 기여
-욕설 감지 모델은 아직 성능이 많이 부족합니다.
 
-모델이 필요한 곳에 사용될 수 있도록 성능을 개선하여 공유해 주세요!
+## 📝Ref
+https://github.com/Tony607/Keras-Trigger-Word  
+https://github.com/LEEMINJOO/Beeeep--  
+
+<br><br>
+
+## 📝Kind_Words_Cloud Ref
+[노션 링크](https://wry-legal-ca8.notion.site/673bdf0c2b0f4ca380ca18f68aaf5672?pvs=4)
