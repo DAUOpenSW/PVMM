@@ -121,8 +121,7 @@ print(curse.masking('옷 다릴 때 니 뇌도 같이 다렸니?'))  # '* * 때 
 
 
 ## 📝Ref
-https://github.com/Tony607/Keras-Trigger-Word  
-https://github.com/LEEMINJOO/Beeeep--  
+https://github.com/2runo/Curse-detection-v2
 
 <br><br>
 
