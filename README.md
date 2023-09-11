@@ -1,5 +1,5 @@
 # PVMM
-[![Video Label](src\imgs\KakaoTalk_20230907_203309517.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
+[![Video Label](/src/imgs/logo.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 <br><br>
 
 ## ✔목차
