@@ -37,7 +37,7 @@
 # 모델
 Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕설 마스킹 기능을 구현했습니다.
 
-어텐션 메커니즘의 구현은 [wikidocs 튜토리얼](https://wikidocs.net/48920)을 참고했습니다. <br>
+어텐션 메커니즘의 구현은 [wikidocs 튜토리얼](https://wikidocs.net/48920)을 참고했습니다. 
 
 모델 구조는 아래와 같습니다 ([Netron](https://github.com/lutzroeder/netron)으로 시각화)
 
