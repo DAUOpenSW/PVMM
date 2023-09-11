@@ -1,9 +1,5 @@
 # PVMM
-<img src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/90764095-50a0-4fb3-8f88-27627974c5f6"/>
-
-
-[![TITLE](https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/90764095-50a0-4fb3-8f88-27627974c5f6)](https://youtu.be/9pCCKXYSrt8?si=XX7FQLAJCI_PErMj)
-
+[![Video Label](https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/90764095-50a0-4fb3-8f88-27627974c5f6)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 <br><br>
 
 ## ✔목차
