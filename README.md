@@ -1,6 +1,11 @@
 # PVMM
 [![Video Label](/src/imgs/logo.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
-<br><br>
+
+##### 이미지를 누르면 시연영상을 확인할 수 있습니다.
+
+<br>
+<br>
+
 
 ## ✔목차
 * [프로젝트 정보](#프로젝트-정보)
