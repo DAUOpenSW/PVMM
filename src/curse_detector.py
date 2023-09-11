@@ -68,20 +68,7 @@ class CurseDetector:
                  tags,) for i, model in enumerate(self.list_of_models)]
         # [(모델1 예측 결과, 어텐션 스코어, 단어 목록), (모델2 ..), ..] 반환
         return ret
-    # def predict2(self, text):
-    #     mfcc_x, ft_x, y, tags = self.embed([text], return_tags=True)
-        
-    #     if len(tags) == 0:
-    #         return [[None]]
 
-    #     mfcc_x_single = mfcc_x[0].reshape((1,) + mfcc_x.shape[1:])
-    #     ft_x_single = ft_x[0].reshape((1,) + ft_x.shape[1:])
-
-    #     ret = [(model.predict([mfcc_x_single , ft_x_single], verbose=0)[:, 1].reshape(-1),
-    #             self.attention_predict(i , mfcc_x_single , ft_x_single).reshape(-1)[:len(tags)],
-    #             tags,) for i , model in enumerate(self.list_of_models)]
-
-    #     return ret
     def replace_ignore_space(self, text, to, replace):
         # 띄어쓰기를 무시하고 replace한다.
         # ex) f('안 녕하세요', '안녕', '*') -> '*하세요'
@@ -114,46 +101,41 @@ class CurseDetector:
             i += 1
         if ing_i == len(to):
             return text.replace(text[start_i:i], replace)
-
-
-    # def masking(self, text):
-    #     # 텍스트를 마스킹하여 (*처리) 반환한다.
-    #     while True:
-    #         pred = self.ensemble(text, return_attention=True)
-    #         #print(text)
-    #         #print(pred[0])
-    #         if pred[0] <= 0.5:
-    #             return text
-    #         text = self.replace_ignore_space(text, pred[2][np.argmax(pred[1])], '*')
-    def masking(self, text):
+        
+    def masking(self, text,flag=True):
+        filter_word = []
         max_iter = 10  # 최대 반복 횟수 설정
+        word_list = []
         for i in range(max_iter):
+            word=[]
             pred = self.ensemble(text, return_attention=True)
+            
             if pred==-1:
                 return '다시 말씀해주세요. 문자열의 길이가 너무 깁니다.'
-            if (i==0) and (text!='loding complete'):
+            if (i==0) and (flag):
                 print(pred[0])
+                word_list = pred[2]
             if pred[0] <= 0.5:
                 break
-            text = self.replace_ignore_space(text, pred[2][np.argmax(pred[1])], '*')
-        return text    
-    
-
-    # def masking2(self, text):
-    #     pred = self.ensemble(text, return_attention=True)
-    #     if pred is None:
-    #         return text  # or whatever you want to do when prediction is not possible
-
-    #     threshold = 0.5
-    #     while pred[0] > threshold:
-    #         max_attention_index = np.argmax(pred[1])
-    #         target_word = pred[2][max_attention_index]
-    #         pattern = r'\b{}\b'.format(re.escape(target_word))  # 정규 표현식 패턴 생성
-    #         text = re.sub(pattern, '*', text)  # 패턴에 해당하는 부분을 '*'로 대체
-
-    #         pred = self.ensemble(text, return_attention=True)
-
-    #     return text
+            idx = np.argmax(pred[1])
+            word_tmp = pred[2][np.argmax(pred[1])]
+            word_len_idx = int(0)
+            word_len = int(0) 
+            for i in range(0,idx+1):
+                if i==idx :
+                    word_len=len(pred[2][i])-1
+                    word.append(word_len_idx)
+                    word.append(word_len)
+                    filter_word.append(word)
+                else :
+                    word_len_idx += len(word_list[i])
+            text = self.replace_ignore_space(text, word_tmp, '*')
+            # '*' not in word_tmp:
+            #    word.append(idx)
+            #    word.append(word_tmp)
+            #    filter_word.append(word)
+        filter_word.sort()
+        return text,filter_word, word_list
 
     def evaluate(self, path, mode='each'):
         # path의 라벨링 돼 있는 텍스트 데이터 파일을 읽어서 모델을 평가한다.
@@ -189,42 +171,20 @@ class CurseDetector:
         except Exception as e:
             return -1
 
-    # def ensemble2(self, text, return_attention=False):
-    #     preds = self.predict2(text)
-    #     if text=="loding complete":
-    #         print("loding complete")
-    #         return None
-    #     if preds is None or preds == [[None]]:
-    #         return None
-    #     if not preds or preds == [[None]]:
-    #         return None
-    
-    #     predictions_array = np.array([preds[i][0] for i in range(len(preds))])
-    
-    #     if not return_attention:
-    #         average_prediction_array=np.average(predictions_array,axis=0)
-    #         average_prediction=average_prediction_array.item()
-    #         return average_prediction
-     
-    #     attentions_array=np.array([preds[i][1] for i in range(len(preds))])
-    #     average_attentions=np.average(attentions_array,axis=0)
-     
-    #     tags=preds[-1][2]
-     
-    #     result=[average_prediction.item(),average_attentions,tags]
-     
-    #     return result
-
-
 if __name__ == "__main__":
     # 예측할 때는 weights_paths의 모델들을 사용하여 예측한다. (앙상블 기법)
-    weights_paths = ['C:/Users/18284/Desktop/CurseDetection/src/models/weights6.h5']
+    weights_paths = ['src/models/weights6.h5']
     curse = CurseDetector(weights_paths)
 
-    print(curse.masking('loding complete'))       # '* *같은 *아 안죽냐?'
-    # print(curse.masking('옷 다릴 때 니 뇌도 같이 다렸니?'))  # '* * 때 니 *도 같이 다렸니?'
+    text , word = curse.masking('loding complete',flag=False)
+    print(text)       # '* *같은 *아 안죽냐?'
+    #text , word = curse.masking('중 하나로, 이 함수를 사용하면 모델 내부에서 다른 층을 반복하여 적용할 수 있습니다. 이를 통해 시계열 데이터를 다룰 때 유용하게 사용')
+    #print(text)
+    #print(word)
     # print(curse.ensemble('니입에서짐승소리가들린다'))        # 0.78354186
-    #print(curse.masking("걍 개시발"))
+    text , word = curse.masking('걍 개시발 개쩌네')
+    print(text)
+    print(word)
     #while True:
         #text = input(':')
 
