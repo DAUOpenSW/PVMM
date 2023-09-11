@@ -62,7 +62,7 @@ def record_audio(output_file, stop_when_silence=3):
                         rate=RATE, input=True,
                         frames_per_buffer=CHUNK)
 
-    SILENCE_THRESHOLD = get_threshold(stream, CHUNK,RATE)  # 소리 강도 임계 값 (잠잠한 환경에 적합
+    SILENCE_THRESHOLD = get_threshold(stream, CHUNK,RATE)  # 소리 강도 임계 값 (잠잠한 환경에 적합)
     print(f"Calculated silence threshold: {SILENCE_THRESHOLD}")
     print("당신의 목소리를 녹음 중입니다...")
     frames = []
