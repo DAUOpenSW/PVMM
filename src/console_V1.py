@@ -167,8 +167,9 @@ if __name__ == "__main__":
     weights_paths = ['./src/models/weights6.h5']
 
     curse = CurseDetector(weights_paths)
+    print("loading complete")
     while(True):
-        curse.masking("loding complete",flag=False)
+        
 
         # 음성 녹음 및 저장
         record_audio(output_file)
