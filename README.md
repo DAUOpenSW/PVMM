@@ -1,5 +1,5 @@
 # PVMM
-[![Video Label](https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/90764095-50a0-4fb3-8f88-27627974c5f6)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
+[![Video Label](src\imgs\KakaoTalk_20230907_203309517.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 <br><br>
 
 ## ✔목차
