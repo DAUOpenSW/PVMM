@@ -32,7 +32,7 @@
 | [김현우](https://github.com/HIT18216) | [김혜영](https://github.com/hyeyeoung) | [박성민](https://github.com/ParkSeungMin1) | [서지헌](https://github.com/MyCoooi) | [이영우](https://github.com/Dandyoung) |
 |역할|PM|역할|역할|역할|
 
-<br><br>
+<br><br><br>
 
 # 모델
 Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕설 마스킹 기능을 구현했습니다. <br>
