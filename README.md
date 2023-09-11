@@ -1,6 +1,9 @@
 # PVMM
 <img src="https://github.com/DAUOpenSW/Kind_Words_Cloud/assets/91776984/90764095-50a0-4fb3-8f88-27627974c5f6"/>
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9pCCKXYSrt8?si=cHPrj3T6vFpZKo5y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <br><br>
 
 ## ✔목차
@@ -122,8 +125,3 @@ print(curse.masking('옷 다릴 때 니 뇌도 같이 다렸니?'))  # '* * 때 
 
 ## 📝Ref
 https://github.com/2runo/Curse-detection-v2
-
-<br><br>
-
-## 📝Kind_Words_Cloud Ref
-[노션 링크](https://wry-legal-ca8.notion.site/673bdf0c2b0f4ca380ca18f68aaf5672?pvs=4)
