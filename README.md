@@ -12,41 +12,10 @@
 
 # 프로젝트 결과 예시
 
-> 짱깨 먹을래? 
-
-원본 음성    
-
-<audio src="https://github.com/DAUOpenSW/PVMM/tree/main/src/record/짱깨_o.wav" 
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/짱깨_f.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-> 니그로 다 죽었으면 좋겠다
-
-원본 음성    
-
-<audio src='./src/record/니그로_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/니그로_f.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
 > 니 애미 출타했냐?
 
 원본 음성    
+[원본 음성 듣기](./src/record/애미_o.wav)
 
 <audio src='./src/record/애미_o.wav'
 controls="controls"></audio>
@@ -92,68 +61,6 @@ controls="controls"></audio>
 <br>
 <br>
 
-> 창틀 좀 닦아라 더럽다
-
-원본 음성    
-
-<audio src='./src/record/창틀_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/창틀_o.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-> 틀딱은 눈치 좀 챙기자
-
-원본 음성    
-
-<audio src='./src/record/틀딱_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/틀딱_f.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-> 개미는 일벌레
-
-원본 음성    
-
-<audio src='./src/record/개미_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/개미_o.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-> 넌 진짜 벌레야
-
-원본 음성    
-
-<audio src='./src/record/벌레_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/벌레_f.wav' controls="controls"></audio>
-<br>
-<br>
-<br>
 
 
 <br>
