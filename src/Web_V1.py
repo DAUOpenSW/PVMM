@@ -9,8 +9,8 @@ from datetime import datetime
 from google.cloud import speech
 from pydub import AudioSegment
 
-credential_path = 'C:/Users/user/Desktop/sttv1-398306-8720d8b20a7e.json'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path 
+credential_path = "C:/Users/18284/Desktop/sttv1-398306-8720d8b20a7e.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 def blur_audio(start_sec, end_sec):
     """Blurs audio between start and end times."""
@@ -38,21 +38,18 @@ def recognize_speech(filename, curse):
         input_audio = audio_file.read()
     
     audio = speech.RecognitionAudio(content=input_audio)
-    print("2")
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=16000,
         language_code="ko-KR",
         enable_word_time_offsets=True,
     )
-    print("3")
     try:
         print("음성을 인식 중입니다...")
         
         response = client.recognize(config=config, audio=audio)
         start_idx=int(0)
         end_idx= int(0)
-        print("4")
         print(response.results)
         for result in response.results:
             text = result.alternatives[0].transcript

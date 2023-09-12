@@ -4,11 +4,176 @@
 * 음성의 욕설 부분은 블러 처리 되어 출력 
 * ex) 아 진짜 씨발 기훈이형 일 좆같이 할래? -> 아 진짜 (---) 기훈이형 일 (---)이 할래?
 
-<br>해당 결과 시연영상 링크 :
+# 프로젝트 시연영상
 
 [![Video Label](/src/imgs/logo.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 
 ##### 이미지를 누르면 시연영상을 확인할 수 있습니다.
+
+# 프로젝트 결과 예시
+
+> 짱깨 먹을래? 
+
+원본 음성    
+
+<audio controls>
+    <source src='짱깨_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='짱깨_f.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 니그로 다 죽었으면 좋겠다
+
+원본 음성    
+
+<audio controls>
+    <source src='니그로_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='니그로_f.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 니 애미 출타했냐?
+
+원본 음성    
+
+<audio controls>
+    <source src='애미_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='애미_f.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 아저씨 발 냄새 나요
+
+원본 음성    
+
+<audio controls>
+    <source src='아저씨_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='아저씨_o.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 씨발 냄새 난다이가
+
+원본 음성    
+
+<audio controls>
+    <source src='시발냄새_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='시발냄새_f.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 창틀 좀 닦아라 더럽다
+
+원본 음성    
+
+<audio controls>
+    <source src='창틀_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='창틀_o.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 틀딱은 눈치 좀 챙기자
+
+원본 음성    
+
+<audio controls>
+    <source src='틀딱_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='틀딱_f.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 개미는 일벌레
+
+원본 음성    
+
+<audio controls>
+    <source src='개미_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='개미_o.wav'>
+</audio>
+<br>
+<br>
+<br>
+
+> 넌 진짜 벌레야
+
+원본 음성    
+
+<audio controls>
+    <source src='벌레_o.wav'>
+</audio>
+
+
+결과 음성 
+
+<audio controls>
+    <source src='벌레_f.wav'>
+</audio>
+<br>
+<br>
+<br>
+
 
 <br>
 <br>

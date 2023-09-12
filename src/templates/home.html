@@ -1,99 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>음성 녹음 및 전송</title>
+    <title>Audio Recorder</title>
 </head>
+
 <body>
-    <h1>음성 녹음</h1>
-    <button id="recordButton">녹음 시작</button>
-    <button id="stopButton">녹음 정지</button>
-    <audio id="audioElement" controls></audio>
-    <button id="uploadButton">녹음 파일 업로드</button>
 
-    <script>
-        let mediaRecorder;
-        let audioChunks = [];
+<button id="start">Start Recording</button>
+<button id="stop" disabled>Stop Recording</button>
 
-        const recordButton = document.getElementById('recordButton');
-        const stopButton = document.getElementById('stopButton');
-        const audioElement = document.getElementById('audioElement');
-        const uploadButton = document.getElementById('uploadButton');
+<script type="text/javascript">
+    let chunks = [];
+    let recorder;
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
 
-        recordButton.addEventListener('click', () => {
-            navigator.mediaDevices.getUserMedia({ audio: true })
-                .then((stream) => {
-                    mediaRecorder = new MediaRecorder(stream);
+    startButton.onclick = function() {
+        chunks = []; // reset chunks for new recording
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+            recorder = new MediaRecorder(stream);
+            recorder.start();
 
-                    mediaRecorder.ondataavailable = (event) => {
-                        if (event.data.size > 0) {
-                            audioChunks.push(event.data);
-                        }
-                    };
-
-                    mediaRecorder.onstop = () => {
-                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                        audioElement.src = URL.createObjectURL(audioBlob);
-                        audioElement.play();
-                    };
-
-                    mediaRecorder.start();
-                })
-                .catch((error) => {
-                    console.error('음성 녹음 오류:', error);
-                });
-        });
-
-        stopButton.addEventListener('click', () => {
-            if (mediaRecorder && mediaRecorder.state === 'recording') {
-                mediaRecorder.stop();
-                stopButton.disabled = true;
-                recordButton.disabled = false;
-            }
-        });
-
-        uploadButton.addEventListener('click', () => {
-            if (audioChunks.length === 0) {
-                alert('녹음된 음성이 없습니다.');
-                return;
-            }
-
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-            const formData = new FormData();
-            formData.append('audio', audioBlob);
-
-            // Define recognition config with sample_rate_hertz
-            const recognitionConfig = {
-                encoding: 'LINEAR16',
-                sampleRateHertz: 16000, // 실제 음성 파일의 샘플률로 수정
-                languageCode: 'ko-KR',
-                enableWordTimeOffsets: true,
+            recorder.ondataavailable = e => {
+                chunks.push(e.data);
+                if(recorder.state == 'inactive'){
+                    let blob = new Blob(chunks, { type: 'audio/wav' });
+                    sendAudioToServer(blob);
+                }
             };
-
-            // Create recognition request
-            const recognitionRequest = {
-                config: recognitionConfig,
-                audio: {
-                    content: audioBlob,
-                },
-            };
-
-            // Append recognitionRequest to formData
-            formData.append('recognitionRequest', JSON.stringify(recognitionRequest));
-
-            fetch('/upload', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                alert('음성 파일이 업로드되었습니다.');
-            })
-            .catch(error => {
-                console.error(error);
-                alert('음성 파일 업로드 중 오류가 발생했습니다.');
-            });
         });
-    </script>
+
+        stopButton.disabled = false;
+        startButton.disabled = true;
+    };
+
+    stopButton.onclick = function() {
+        if (recorder) {
+            recorder.stop();
+        }
+
+        stopButton.disabled = true;
+        startButton.disabled=false;
+    };
+
+   function sendAudioToServer(blob) {
+       let formData  = new FormData();
+       formData.append('audio', blob);
+
+       fetch('/upload', {method: "POST", body: formData}).then(response =>{
+           console.log(response.text());
+       });
+   }
+</script>
+
 </body>
 </html>

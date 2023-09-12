@@ -98,9 +98,9 @@ def record_audio(output_file, stop_when_silence=3):
         wf.setframerate(RATE)
         wf.writeframes(b''.join(frames))
         
-def blur_audio(start_sec, end_sec):
+def blur_audio(start_sec, end_sec,idx):
     """Blurs audio between start and end times."""
-    audio_path="test.wav"
+    audio_path="test"+str(idx)+".wav"
     
     audio = AudioSegment.from_file(audio_path)
     
@@ -113,7 +113,8 @@ def blur_audio(start_sec, end_sec):
     after_blur_part=audio[end_millisec:]
 
     final_audio=before_blur_part + silence_segment + after_blur_part
-    
+    idx=int(idx)+1
+    audio_path="test"+str(idx)+".wav"
     final_audio.export(audio_path, format="wav")
 
 
@@ -159,7 +160,7 @@ def recognize_speech(filename, curse):
                         print(i)
                         print(start_time)
                         print(end_time)
-                        blur_audio(start_time,end_time)
+                        blur_audio(start_time,end_time,i)
                 start_idx = end_idx
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -169,7 +170,7 @@ def recognize_speech(filename, curse):
 
 
 if __name__ == "__main__":
-    output_file = "test.wav"
+    output_file = "test0.wav"
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     weights_paths = ['./src/models/weights6.h5']
 
