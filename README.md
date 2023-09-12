@@ -17,7 +17,7 @@
 원본 음성    
 
 <audio controls>
-    <source src='짱깨_o.wav'>
+    <source src='./src/record/ant_o.wav'>
 </audio>
 
 
