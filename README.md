@@ -16,7 +16,7 @@
 
 원본 음성    
 
-<audio src="./src/record/짱깨_o.wav" 
+<audio src="https://github.com/DAUOpenSW/PVMM/tree/main/src/record/짱깨_o.wav" 
 controls="controls"></audio>
 
 
@@ -150,8 +150,7 @@ controls="controls"></audio>
 
 결과 음성 
 
-<audio src='./src/record/벌레_f.wav'
-controls="controls"></audio>
+<audio src='./src/record/벌레_f.wav' controls="controls"></audio>
 <br>
 <br>
 <br>
