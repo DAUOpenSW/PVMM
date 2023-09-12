@@ -120,13 +120,15 @@ class CurseDetector:
             idx = np.argmax(pred[1])
             word_tmp = pred[2][np.argmax(pred[1])]
             word_len_idx = int(0)
-            word_len = int(0) 
-            for i in range(0,idx+1):
-                if i==idx :
-                    word_len=len(pred[2][i])-1
+            word_len = int(0)
+            for i in range(0,len(word_list)):
+                word=[]
+                if i==idx or word_list[i]==word_tmp:
+                    word_len=len(word_list[i])-1
                     word.append(word_len_idx)
                     word.append(word_len)
                     filter_word.append(word)
+                    word_len_idx += len(word_list[i])
                 else :
                     word_len_idx += len(word_list[i])
             text = self.replace_ignore_space(text, word_tmp, '*')
@@ -176,15 +178,17 @@ if __name__ == "__main__":
     weights_paths = ['src/models/weights6.h5']
     curse = CurseDetector(weights_paths)
 
-    text , word = curse.masking('loding complete',flag=False)
+    text ,filter_word,word_list = curse.masking('loding complete',flag=False)
     print(text)       # '* *같은 *아 안죽냐?'
     #text , word = curse.masking('중 하나로, 이 함수를 사용하면 모델 내부에서 다른 층을 반복하여 적용할 수 있습니다. 이를 통해 시계열 데이터를 다룰 때 유용하게 사용')
     #print(text)
     #print(word)
     # print(curse.ensemble('니입에서짐승소리가들린다'))        # 0.78354186
-    text , word = curse.masking('걍 개시발 개쩌네')
-    print(text)
-    print(word)
+    
+    text,filter_word,word_list = curse.masking('시발 좃 같네 시발')
+    print("filter : " + str(text))
+    print(filter_word)
+    print(word_list)
     #while True:
         #text = input(':')
 

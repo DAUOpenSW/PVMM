@@ -1,10 +1,10 @@
 # PVMM
-## 2023.09.11 수정사항
-* 모델 최종 출력  .txt -> .wav(음성)로 수정.
-* 음성은 욕설 부분 블러처리되어 출력. 
+## 변경 사항
+* 모델 최종 출력  .txt -> .wav(음성)로 수정
+* 음성의 욕설 부분은 블러 처리 되어 출력 
 * ex) 아 진짜 씨발 기훈이형 일 좆같이 할래? -> 아 진짜 (---) 기훈이형 일 (---)이 할래?
-* 해당 결과 시연영상 링크 :  
 
+<br>해당 결과 시연영상 링크 :
 
 [![Video Label](/src/imgs/logo.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 
@@ -15,10 +15,13 @@
 
 
 ## ✔목차
-* [프로젝트 정보](#프로젝트-정보)
-* [프로젝트 소개](#프로젝트-소개)
-* [팀원 소개](#팀원-소개)
-* [Ref](#ref)
+* [프로젝트 정보](#🔎프로젝트-정보)
+* [프로젝트 소개](#🖐프로젝트-소개)
+* [팀원 소개](#🙋‍♀️팀원-소개)
+* [모델](#모델)
+* [데이터](#데이터)
+* [학습 과정](#학습-과정)
+* [Ref](#📝ref)
 
 <br><br>
 
@@ -45,13 +48,13 @@
 # 모델
 Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕설 마스킹 기능을 구현했습니다. 
 
-어텐션 메커니즘의 구현은 [wikidocs 튜토리얼](https://wikidocs.net/48920)을 참고했습니다. 
+## 성민아 여기다가 적으렴 
 
-모델 구조는 아래와 같습니다 ([Netron](https://github.com/lutzroeder/netron)으로 시각화)
+모델 구조는 아래와 같습니다
 
 ![1](src/imgs/model.png)
 
-더 자세한 내용은 [코드](https://github.com/2runo/Curse-detection-v2/blob/master/src/models.py)를 참고해 주세요.
+더 자세한 내용은 [코드](https://github.com/DAUOpenSW/PVMM/blob/main/src/models.py)를 참고해 주세요.
 
 # 데이터
 
@@ -76,6 +79,8 @@ Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕
   때문에 예측을 위해선 fasttext 모델이 `embedding_models`폴더에 `fasttext.bin`이라는 이름으로 옮겨져 있어야 합니다.
   
   fasttext 모델은 [여기](https://drive.google.com/file/d/1AdE-_SrqF6if5BVC7QlwbZqX6HBJ8j9U/view?usp=sharing)에서 다운로드받을 수 있습니다.
+  
+  ## 이주소 우리꺼임??
   
 - **mfcc 임베딩**
 
