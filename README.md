@@ -16,16 +16,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='./src/record/ant_o.wav'>
-</audio>
+<audio src="./src/record/짱깨_o.wav" 
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='짱깨_f.wav'>
-</audio>
+<audio src='./src/record/짱깨_f.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -34,16 +32,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='니그로_o.wav'>
-</audio>
+<audio src='./src/record/니그로_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='니그로_f.wav'>
-</audio>
+<audio src='./src/record/니그로_f.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -52,16 +48,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='애미_o.wav'>
-</audio>
+<audio src='./src/record/애미_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='애미_f.wav'>
-</audio>
+<audio src='./src/record/애미_f.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -70,16 +64,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='아저씨_o.wav'>
-</audio>
+<audio src='./src/record/아저씨_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='아저씨_o.wav'>
-</audio>
+<audio src='./src/record/아저씨_o.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -88,16 +80,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='시발냄새_o.wav'>
-</audio>
+<audio src='./src/record/시발냄새_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='시발냄새_f.wav'>
-</audio>
+<audio src='./src/record/시발냄새_f.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -106,16 +96,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='창틀_o.wav'>
-</audio>
+<audio src='./src/record/창틀_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='창틀_o.wav'>
-</audio>
+<audio src='./src/record/창틀_o.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -124,16 +112,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='틀딱_o.wav'>
-</audio>
+<audio src='./src/record/틀딱_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='틀딱_f.wav'>
-</audio>
+<audio src='./src/record/틀딱_f.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -142,16 +128,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='개미_o.wav'>
-</audio>
+<audio src='./src/record/개미_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='개미_o.wav'>
-</audio>
+<audio src='./src/record/개미_o.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
@@ -160,16 +144,14 @@
 
 원본 음성    
 
-<audio controls>
-    <source src='벌레_o.wav'>
-</audio>
+<audio src='./src/record/벌레_o.wav'
+controls="controls"></audio>
 
 
 결과 음성 
 
-<audio controls>
-    <source src='벌레_f.wav'>
-</audio>
+<audio src='./src/record/벌레_f.wav'
+controls="controls"></audio>
 <br>
 <br>
 <br>
