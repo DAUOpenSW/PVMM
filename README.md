@@ -4,67 +4,16 @@
 * 음성의 욕설 부분은 블러 처리 되어 출력 
 * ex) 아 진짜 씨발 기훈이형 일 좆같이 할래? -> 아 진짜 (---) 기훈이형 일 (---)이 할래?
 
-# 프로젝트 시연영상
+# 프로젝트 시연 영상(.txt, 문자열 블러 처리)
 
 [![Video Label](/src/imgs/logo.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 
 ##### 이미지를 누르면 시연영상을 확인할 수 있습니다.
 
-# 프로젝트 결과 예시
+# 프로젝트 시연 영상(.wav, 음성 블러 처리)
 
-> 니 애미 출타했냐?
+[결과 영상](https://youtu.be/VRiUKeyz3M4)
 
-원본 음성    
-[원본 음성 듣기](https://youtu.be/VRiUKeyz3M4)
-
-<audio src='https://youtu.be/VRiUKeyz3M4'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/애미_f.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-> 아저씨 발 냄새 나요
-
-원본 음성    
-
-<audio src='./src/record/아저씨_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/아저씨_o.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-> 씨발 냄새 난다이가
-
-원본 음성    
-
-<audio src='./src/record/시발냄새_o.wav'
-controls="controls"></audio>
-
-
-결과 음성 
-
-<audio src='./src/record/시발냄새_f.wav'
-controls="controls"></audio>
-<br>
-<br>
-<br>
-
-
-
-<br>
-<br>
 
 
 ## ✔목차
@@ -94,14 +43,16 @@ controls="controls"></audio>
 |:---:|:---:|:---:|:---:|:---:|
 |컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|컴퓨터공학과<br>4학년|
 | [김현우](https://github.com/HIT18216) | [김혜영](https://github.com/hyeyeoung) | [박성민](https://github.com/ParkSeungMin1) | [서지헌](https://github.com/MyCoooi) | [이영우](https://github.com/Dandyoung) |
-|역할|PM|역할|역할|역할|
+|개발|PM|개발|개발|개발|
 
 <br><br><br>
 
 # 모델
 Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕설 마스킹 기능을 구현했습니다. 
-
-## 성민아 여기다가 적으렴 
+<br>
+Google Cloud STT API를 사용하여 Time Stamp 및 STT를 구현하였습니다.
+<br>
+Pydub 라이브러리를 활용하여 오디오 블러처리를 구현하였습니다.
 
 모델 구조는 아래와 같습니다
 
@@ -131,9 +82,7 @@ Bidirectional-LSTM을 사용하였고 어텐션 메커니즘을 적용하여 욕
   
   때문에 예측을 위해선 fasttext 모델이 `embedding_models`폴더에 `fasttext.bin`이라는 이름으로 옮겨져 있어야 합니다.
   
-  fasttext 모델은 [여기](https://drive.google.com/file/d/1AdE-_SrqF6if5BVC7QlwbZqX6HBJ8j9U/view?usp=sharing)에서 다운로드받을 수 있습니다.
-  
-  ## 이주소 우리꺼임??
+  fasttext 모델은 [여기](https://drive.google.com/file/d/1kW7cRDRe7HMQskSytv9gUbkUFhG8LrIn/view?usp=drive_link)에서 다운로드받을 수 있습니다.
   
 - **mfcc 임베딩**
 
