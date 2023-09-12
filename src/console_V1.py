@@ -9,6 +9,8 @@ from datetime import datetime
 from google.cloud import speech
 from pydub import AudioSegment
 
+credential_path = "C:/Users/18284/Desktop/sttv1-398306-8720d8b20a7e.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 def save_to_db(uid, origin_text, filter_text, score):
     try:
@@ -63,7 +65,7 @@ def record_audio(output_file, stop_when_silence=3):
                         frames_per_buffer=CHUNK)
 
     SILENCE_THRESHOLD = get_threshold(stream, CHUNK,RATE)  # 소리 강도 임계 값 (잠잠한 환경에 적합)
-    print(f"Calculated silence threshold: {SILENCE_THRESHOLD}")
+    print(f"측정된 소음치 : {SILENCE_THRESHOLD}")
     print("당신의 목소리를 녹음 중입니다...")
     frames = []
     silence_count = 0
@@ -138,12 +140,13 @@ def recognize_speech(filename, curse):
         for result in response.results:
             text = result.alternatives[0].transcript
             
-            print("Here's the text from the audio:")
+            
             
             text,filter_word,word_list = curse.masking(result.alternatives[0].transcript)
-            print(text)
-            print("filter : " + str(text))
+            
             print("origin : {}".format(result.alternatives[0].transcript))
+            print("filter : " + str(text))
+            
             for word_info in result.alternatives[0].words:
                 end_idx += len(word_info.word)
                 start_time = word_info.start_time.total_seconds()
@@ -167,7 +170,7 @@ if __name__ == "__main__":
     weights_paths = ['./src/models/weights6.h5']
 
     curse = CurseDetector(weights_paths)
-    print("loading complete")
+    curse.masking("녹음 준비 완료",flag=False)
     while(True):
         
 
