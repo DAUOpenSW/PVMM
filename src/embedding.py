@@ -11,6 +11,7 @@ from mfcc_encoder import MfccEmbedding
 import hgtk
 import extract_data
 import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="gensim")
 warnings.filterwarnings('ignore', category=UserWarning, module='fasttext')
 
 
