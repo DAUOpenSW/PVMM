@@ -15,9 +15,9 @@
 > 니 애미 출타했냐?
 
 원본 음성    
-[원본 음성 듣기](./src/record/애미_o.wav)
+[원본 음성 듣기](https://www.youtube.com/watch?v=i9GErPf3E9k)
 
-<audio src='./src/record/애미_o.wav'
+<audio src='https://www.youtube.com/watch?v=i9GErPf3E9k'
 controls="controls"></audio>
 
 
