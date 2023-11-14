@@ -177,7 +177,7 @@ if __name__ == "__main__":
     curse = CurseDetector(weights_paths)
     curse.masking("녹음 준비 완료",flag=False)
     while(True):
-        # 음성 녹음 및 저장,,,
+        # 음성 녹음 및 저장,,,ad
         record_audio(output_file)
         
         # 저장된 음성 파일을 텍스트로 변환
