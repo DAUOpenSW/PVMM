@@ -9,6 +9,10 @@ from datetime import datetime
 from google.cloud import speech
 from pydub import AudioSegment
 
+import time
+# start = time.time()
+# print("Runtime :", time.time() - start)
+
 credential_path = "C:/Users/eoduq/Desktop/PVMM/PVMM/src/embeding_models/sttv1-398306-8720d8b20a7e.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
@@ -134,6 +138,7 @@ def recognize_speech(filename, curse):
 
     try:
         print("음성을 인식 중입니다...")
+        start = time.time()
         
         response = client.recognize(config=config, audio=audio)
         start_idx=int(0)
@@ -141,27 +146,26 @@ def recognize_speech(filename, curse):
         for result in response.results:
             text = result.alternatives[0].transcript
             
-            
-            
             text,filter_word,word_list = curse.masking(result.alternatives[0].transcript)
             
-            print("origin : {}".format(result.alternatives[0].transcript))
-            print("filter : " + str(text))
-            print(filter_word)
-            print(result.alternatives[0].words)
+            # print("origin : {}".format(result.alternatives[0].transcript))
+            # print("filter : " + str(text))
+            # print(filter_word)
+            # print(result.alternatives[0].words)
             for word_info in result.alternatives[0].words:
-                end_idx += lenq(word_info.word)
+                end_idx += len(word_info.word)
                 start_time = word_info.start_time.total_seconds()
                 end_time = word_info.end_time.total_seconds()
                 
                 # If the word is a curse, blur it in the original audio,,
                 for i in range(0,len(filter_word)):
                     if ((filter_word[i][0]<end_idx) and (filter_word[i][0]>=start_idx)) or ((filter_word[i][0]+filter_word[i][1]<end_idx) and (filter_word[i][0]+filter_word[i][1]>=start_idx)) :
-                        print(i)
-                        print(start_time)
-                        print(end_time)
+                        # print(i)
+                        # print(start_time)
+                        # print(end_time)
                         blur_audio(start_time,end_time,i)
                 start_idx = end_idx
+            print("Runtime :", time.time() - start)
     except Exception as e:
         print(f"An error occurred: {e}")
     
@@ -183,4 +187,6 @@ if __name__ == "__main__":
         # 저장된 음성 파일을 텍스트로 변환
         recognize_speech(output_file,curse)
         break
-        
+    
+    
+    

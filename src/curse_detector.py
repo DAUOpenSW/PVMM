@@ -3,7 +3,7 @@ import embedding as emb
 import models
 import numpy as np
 import re
-
+import time
 
 class CurseDetector:
     def __init__(self, weights_paths):
@@ -175,20 +175,25 @@ class CurseDetector:
 
 if __name__ == "__main__":
     # 예측할 때는 weights_paths의 모델들을 사용하여 예측한다. (앙상블 기법)
-    weights_paths = ['src/models/weights6.h5']
+    weights_paths = ['C:/Users/eoduq/Desktop/PVMM/PVMM/src/models/weights6.h5']
     curse = CurseDetector(weights_paths)
+    start = time.time()
 
     text ,filter_word,word_list = curse.masking('loding complete',flag=False)
+    print("Runtime :", time.time() - start)
+    
     print(text)       # '* *같은 *아 안죽냐?'
     #text , word = curse.masking('중 하나로, 이 함수를 사용하면 모델 내부에서 다른 층을 반복하여 적용할 수 있습니다. 이를 통해 시계열 데이터를 다룰 때 유용하게 사용')
     #print(text)
     #print(word)
     # print(curse.ensemble('니입에서짐승소리가들린다'))        # 0.78354186
     
-    text,filter_word,word_list = curse.masking('시발 좃 같네 시발')
+    text,filter_word,word_list = curse.masking('씨발련아')
     print("filter : " + str(text))
+    
     print(filter_word)
     print(word_list)
+    
     #while True:
         #text = input(':')
 
