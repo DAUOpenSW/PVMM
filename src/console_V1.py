@@ -9,7 +9,7 @@ from datetime import datetime
 from google.cloud import speech
 from pydub import AudioSegment
 
-credential_path = "C:/Users/18284/Desktop/sttv1-398306-8720d8b20a7e.json"
+credential_path = "C:/Users/eoduq/Desktop/PVMM/PVMM/src/embeding_models/sttv1-398306-8720d8b20a7e.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 def save_to_db(uid, origin_text, filter_text, score):
@@ -150,7 +150,7 @@ def recognize_speech(filename, curse):
             print(filter_word)
             print(result.alternatives[0].words)
             for word_info in result.alternatives[0].words:
-                end_idx += len(word_info.word)
+                end_idx += lenq(word_info.word)
                 start_time = word_info.start_time.total_seconds()
                 end_time = word_info.end_time.total_seconds()
                 
@@ -172,14 +172,12 @@ def recognize_speech(filename, curse):
 if __name__ == "__main__":
     output_file = "test0.wav"
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-    weights_paths = ['./src/models/weights6.h5']
+    weights_paths = ['C:/Users/eoduq/Desktop/PVMM/PVMM/src/models/weights6.h5']
 
     curse = CurseDetector(weights_paths)
     curse.masking("녹음 준비 완료",flag=False)
     while(True):
-        
-
-        # 음성 녹음 및 저장
+        # 음성 녹음 및 저장,,,
         record_audio(output_file)
         
         # 저장된 음성 파일을 텍스트로 변환
