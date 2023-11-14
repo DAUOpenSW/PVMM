@@ -154,7 +154,7 @@ def recognize_speech(filename, curse):
                 start_time = word_info.start_time.total_seconds()
                 end_time = word_info.end_time.total_seconds()
                 
-                # If the word is a curse, blur it in the original audio
+                # If the word is a curse, blur it in the original audio,,
                 for i in range(0,len(filter_word)):
                     if ((filter_word[i][0]<end_idx) and (filter_word[i][0]>=start_idx)) or ((filter_word[i][0]+filter_word[i][1]<end_idx) and (filter_word[i][0]+filter_word[i][1]>=start_idx)) :
                         print(i)
