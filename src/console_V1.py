@@ -79,7 +79,7 @@ def record_audio(output_file, stop_when_silence=3):
         frames.append(data)
         audio_energy = np.frombuffer(data, dtype=np.int16).max()  # audio_energy 변환 수정
 
-        # 소리가 임계값 이하일 경우 카운트 증가, 아니면 카운트 초기화
+        # 소리가 임계값 이하일 경우 카운트 증가, 아니면 카운트 초기화,,
         if audio_energy < SILENCE_THRESHOLD:
             silence_count += 1
         else:
