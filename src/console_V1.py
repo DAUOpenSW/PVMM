@@ -148,10 +148,10 @@ def recognize_speech(filename, curse):
             
             text,filter_word,word_list = curse.masking(result.alternatives[0].transcript)
             
-            # print("origin : {}".format(result.alternatives[0].transcript))
-            # print("filter : " + str(text))
-            # print(filter_word)
-            # print(result.alternatives[0].words)
+            print("origin : {}".format(result.alternatives[0].transcript))
+            print("filter : " + str(text))
+            print(filter_word)
+            print(result.alternatives[0].words)
             for word_info in result.alternatives[0].words:
                 end_idx += len(word_info.word)
                 start_time = word_info.start_time.total_seconds()
@@ -160,9 +160,9 @@ def recognize_speech(filename, curse):
                 # If the word is a curse, blur it in the original audio,,
                 for i in range(0,len(filter_word)):
                     if ((filter_word[i][0]<end_idx) and (filter_word[i][0]>=start_idx)) or ((filter_word[i][0]+filter_word[i][1]<end_idx) and (filter_word[i][0]+filter_word[i][1]>=start_idx)) :
-                        # print(i)
-                        # print(start_time)
-                        # print(end_time)
+                        print(i)
+                        print(start_time)
+                        print(end_time)
                         blur_audio(start_time,end_time,i)
                 start_idx = end_idx
             print("Runtime :", time.time() - start)
