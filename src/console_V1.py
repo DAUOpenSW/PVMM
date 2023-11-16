@@ -10,7 +10,7 @@ from google.cloud import speech
 from pydub import AudioSegment
 
 import time
-# start = time.time()
+# start = time.time(),,
 # print("Runtime :", time.time() - start)
 
 credential_path = "C:/Users/eoduq/Desktop/PVMM/PVMM/src/embeding_models/sttv1-398306-8720d8b20a7e.json"
@@ -85,7 +85,7 @@ def record_audio(output_file, stop_when_silence=3):
         else:
             silence_count = 0
 
-        # 지정된 시간 동안 소리가 없을 때 녹음 종료
+        # 지정된 시간 동안 소리가 없을 때 녹음 종료,,
         if silence_count >= RATE/CHUNK * stop_when_silence:
             break
 
