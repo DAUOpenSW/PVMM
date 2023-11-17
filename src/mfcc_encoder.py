@@ -11,7 +11,8 @@ from char2vec import CHAR2VEC
 
 
 class MfccEmbedding():
-    def __init__(self, enc=None, weights_path="C:/hw/Curse-detection-v2/src/embedding_models/mfcc.h5"):
+    # 인코더는 mfcc 인코더 사용 << 어텐션에 사용하는 인코더인지 체크
+    def __init__(self, enc=None, weights_path="C:/Users/eoduq/Desktop/PVMM/PVMM/src/embeding_models/mfcc.h5"):
         self.enc = enc
         self.weights_path = weights_path
 
