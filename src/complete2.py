@@ -3,7 +3,7 @@ import os
 from curse_detector import CurseDetector
 from google.cloud import speech_v1p1beta1 as speech
 from pydub import AudioSegment
-
+# 이건 뭔 파일이냐 ??
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100
