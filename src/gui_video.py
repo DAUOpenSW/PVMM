@@ -8,6 +8,7 @@ from datetime import datetime
 import tkinter as tk
 import tkinter.font
 # 이건 또 뭐하는 코드지?? 
+# 쓸데없는 코드 정리합시다
 def save_to_db(uid, origin_text, filter_text, score):
     try:
         connection = mysql.connector.connect(user='js',
