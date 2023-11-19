@@ -1,3 +1,5 @@
+# 다시한번 웹으로 연동해보자
+
 from flask import Flask, request
 from werkzeug.utils import secure_filename
 from flask import Flask, request, jsonify,redirect, url_for, render_template
