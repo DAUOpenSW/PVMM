@@ -1,5 +1,6 @@
 # 댓글 데이터를 전처리한다.
 # 긴 댓글은 제거하거나 특수문자를 제거한다.
+# re가 뭘 임포트 하는건지? recognition인가?
 import re
 import itertools
 
