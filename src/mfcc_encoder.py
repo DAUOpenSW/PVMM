@@ -1,5 +1,5 @@
 # MFCC embedding을 수행한다.
-# 깃 커밋용~
+# 깃 커밋용~2
 import numpy as np
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
