@@ -21,7 +21,7 @@ class Preprocessor():
         # 3. 라벨 형식 설정
         labels = [[1, 0], [0, 1]]
         ydata = np.array([labels[i] for i in ydata])
-
+        # 추가한 부분. 한 에폭이 끝날때마다 split해서 트레이닝
         # 4. train test 데이터 split
         xtrain, xtest, ytrain, ytest = train_test_split(xdata, ydata, test_size=test_size)
 
