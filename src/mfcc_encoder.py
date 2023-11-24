@@ -1,4 +1,5 @@
 # MFCC embedding을 수행한다
+# https://velog.io/@spaceforvincent/%EB%A7%90%ED%95%B4%EB%B4%90%EC%9A%94-%EC%95%8C%ED%8C%8C%EA%B3%B0-1
 import numpy as np
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
