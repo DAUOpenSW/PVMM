@@ -5,7 +5,7 @@
 * ex) 아 진짜 씨발 기훈이형 일 좆같이 할래? -> 아 진짜 (---) 기훈이형 일 (---)이 할래?
 
 # 프로젝트 시연 영상(.txt, 문자열 블러 처리)
-# ㅜㅜㅜㅜ
+
 [![Video Label](/src/imgs/logo.png)](https://youtu.be/9pCCKXYSrt8?si=SUoRJZ16m9R-fcXL)
 
 ##### 이미지를 누르면 시연영상을 확인할 수 있습니다.
