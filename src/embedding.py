@@ -1,4 +1,4 @@
-# 댓글을 임베딩한다.
+# 댓글을 임베딩한다..
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
