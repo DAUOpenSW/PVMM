@@ -1,5 +1,5 @@
 # 모델을 정의한다.
-# 천천히 한번 더 읽어보기
+# 천천히 한번 더 읽어보기.
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
