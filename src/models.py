@@ -1,5 +1,5 @@
 # 모델을 정의한다.
-# 모델 구조 처음부터 다시 확인하기
+
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
